@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+ENCODING = 'utf-8'
+
+ORACLE_HOST = "oracle_host"
+ORACLE_PORT = 1521
+ORACLE_SID  = "oracle_sid"
+ORACLE_USER = "oracle_user"
+ORACLE_PW   = "oracle_password"
+
+
+POSTGRES_HOST = 'postgres_host'
+POSTGRES_PORT = 5432
+POSTGRES_DBNAME = 'postgress_dbname'
+POSTGRES_USER = 'postgress_user'
+POSTGRES_PW = 'postgress_password'
+
+POSTGRES_DSN = "host='%s' port=%s dbname='%s' user='%s' password='%s'" % \
+    (POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DBNAME, POSTGRES_USER, POSTGRES_PW)
+
+
+MSSQL_HOST = 'mssql_host'
+MSSQL_DBNAME = 'mssql_dbname'
+MSSQL_USER = 'mssql_user'
+MSSQL_PW = 'mssql_password'
+
+
+# PostgreSQL DSN
+PG_ODBC_DSN = "DRIVER={PostgreSQL Unicode};SERVER=%s;PORT=%s;DATABASE=%s;UID=%s;PWD=%s" % \
+    (POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DBNAME, POSTGRES_USER, POSTGRES_PW)
+
+# Oracle DSN
+ORA_ODBC_DSN = "DRIVER={Oracle in OraClient10g_x86};DBQ=%s:%s/%s;UID=%s;PWD=%s" % \
+    (ORACLE_HOST, ORACLE_PORT, ORACLE_SID, ORACLE_USER, ORACLE_PW)
+
+# Microsoft SQL Server DSN
+MS_ODBC_DSN = "DRIVER={SQL Server Native Client 10.0};SERVER=%s;DATABASE=%s;UID=%s;PWD=%s" % \
+    (MSSQL_HOST, MSSQL_DBNAME, MSSQL_USER, MSSQL_PW)
+
+
+# Name of default ormlite's DB connection module (psycopgcon, cxoracon, odbcmscon)
+DEFAULT_DB_CON = 'psycopgcon'
+print '[Default DB: %s] ' % DEFAULT_DB_CON
+
+# Type of default DB
+DEFAULT_DB_TYPE = 'pg'  # Valid types: 'pg', 'ora', 'ms'
